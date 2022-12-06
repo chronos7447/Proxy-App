@@ -14,6 +14,8 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+const jsonString02 = '{ "commands" :[ { "type" : "com.okta.assertion.patch", "value" : [ { "op": "add", "path": "/claims/newAssertionAttribute" , "value" : { "attributes" : { "NameFormat" : "urn:oasis:names:tc:SAML:2.0:attrname-format:basic" }, "attributeValues" : [ { "attributes" : { "xsi:type" : "xs:string" }, "value" : "TestValue" } ] } } ] } ] }';
+
 app.use(function (req, res, next) {
     req.webtaskContext = {};
     const result = dotenv.config()
@@ -38,7 +40,7 @@ app.get('/authorize', (req, res) => {
 });
 
 app.get('/.well-known/jwks.json', (req, res) => {
-    return res.send(200, 'missing client_id');
+    return res.send(200, jsonString02);
 });
 
 app.post('/token', async function (req, res) {
