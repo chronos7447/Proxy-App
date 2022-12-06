@@ -40,7 +40,15 @@ app.get('/authorize', (req, res) => {
 });
 
 app.get('/.well-known/jwks.json', (req, res) => {
-    return res.json({ a: 1 });
+    return res.json({
+  "kty": "EC",
+  "crv": "P-256",
+  "x": "og4duU1mPOqdwwwQDRY_2BsZ2WHv0v8OfGu3R0UpqWQ",
+  "y": "PSTAWvLiFzN5ZWk80mFMoAF5lPjgomJHHXilza2z2FI",
+  "use": "sig",
+  "kid": "test_sujoy",
+  "alg": "ES256"
+});
 });
 
 app.post('/token', async function (req, res) {
