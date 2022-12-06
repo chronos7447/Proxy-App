@@ -40,7 +40,7 @@ app.get('/authorize', (req, res) => {
 });
 
 app.get('/.well-known/jwks.json', (req, res) => {
-    return res.send(200, jsonString02);
+    return res.json({ a: 1 });
 });
 
 app.post('/token', async function (req, res) {
