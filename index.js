@@ -41,6 +41,8 @@ app.get('/authorize', (req, res) => {
 
 app.get('/.well-known/jwks.json', (req, res) => {
     return res.json({
+"keys": [
+{
   "kty": "EC",
   "crv": "P-256",
   "x": "og4duU1mPOqdwwwQDRY_2BsZ2WHv0v8OfGu3R0UpqWQ",
@@ -48,6 +50,8 @@ app.get('/.well-known/jwks.json', (req, res) => {
   "use": "sig",
   "kid": "test_sujoy",
   "alg": "ES256"
+}
+]
 });
 });
 
