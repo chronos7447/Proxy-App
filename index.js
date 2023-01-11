@@ -50,6 +50,15 @@ app.get('/.well-known/jwks.json', (req, res) => {
   "use": "sig",
   "kid": "test_sujoy",
   "alg": "ES256"
+},
+{
+    "kty": "EC",
+    "use": "enc",
+    "crv": "P-256",
+    "kid": "Sujoy_test_ENC",
+    "x": "gSkgyFnlJZIqaNYyX6F4i1NASmxw2XfhyFmSdWwjUmg",
+    "y": "rMngEonLLv3EjkC5BJB3riTZmq9kFgUOtf6dit0Awo0",
+    "alg": "ECDH-ES+A128KW"
 }
 ]
 });
